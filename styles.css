@@ -1,0 +1,984 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-appearance: none;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+body {
+    background-color: #f2f2f7 !important;
+}
+
+.splashScreen {
+    display: none;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100vh;
+    height: 100vh;
+    background-color: #f2f2f7;
+    z-index: 999;
+}
+
+.splashScreen .display-none{
+    display: none;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100vh;
+    height: 100vh;
+    background-color: #f2f2f7;
+}
+
+
+.splashScreen img {
+    position: fixed;
+    left: 50%;
+    top:30%;
+    transform: translate(-50%);
+    width: 50%;
+}
+
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+.fade-in {
+    opacity: 0;
+    animation: fadeIn 1s ease-in forwards;
+}
+
+
+
+
+/* ======================   LOGIN SCREEN STYLES BEGIN HERE ======================  */
+.login-screen {
+    display: block;
+    position: fixed;
+    height: 100vh;
+    width: 100%;
+    top: 0px;
+    left: 0px;
+    background-color: #f2f2f7;
+    z-index: 998;
+}
+.centered {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+.login-screen img{
+    margin-top: 10%;
+    margin-bottom: 20%;
+    width: 45%;
+    max-width: 400px;
+}
+.login-screen .credentials {
+    display: block;
+    height: 35px;
+    width: 60%;
+    margin-bottom: 10px;
+    border: 1px solid lightgray;
+    text-align: center;
+    font-size: 15px;
+    color: gray;
+}
+.login-screen button {
+    margin-top: 40px;
+    height: 40px;
+    width: 60%;
+    background-color: rgb(0, 122, 255);
+    color: white;
+    border-radius: 10px;
+    font-size: 15px;
+    border: none;
+}
+.login-screen iframe {
+    display: none;
+}
+.saveCredentials {
+    width: 60%;
+    height: 35px;
+    line-height: 35px;
+    margin-top: 30px;
+    display: grid;
+    grid-template-columns: auto 60px;
+    font-size: 18px;
+    color: gray;
+}
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 35px;
+}
+.switch input { 
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+input:checked + .slider {
+    background-color: #0fa30a;
+}
+input:focus + .slider {
+    box-shadow: 0 0 1px #0fa30a;
+}
+input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+}
+.slider.round {
+    border-radius: 34px;
+}
+.slider.round:before {
+    border-radius: 50%;
+}
+
+
+/* ======================   MAIN SCREEN STYLES BEGIN HERE   ======================  */
+.titleHandler {
+    position: sticky;
+    background-color: rgba(255, 255, 255, 0.5); 
+    -webkit-backdrop-filter: blur(15px);
+    border-bottom: 1px solid lightgray;
+    color: black;
+    top: -50px;
+    height: 90px;
+    width: 100%;
+    z-index: 999;
+    text-align: center;
+    line-height: 130px;
+    font-size: 18px;
+    font-weight: 600;
+    display: none;
+}
+#txtScreenTitle {
+    margin-bottom: 0px;
+}
+
+.title {
+    display: grid;
+    grid-template-columns: auto 70px;
+}
+.title h1  {
+    padding: 20px;
+    padding-top: 20px;
+    font-size: 35px;
+    font-weight: 700;
+}
+
+
+/* ======================  ORDER SCREEN STYLES   ======================  */
+#orderScreen {
+    display: block;
+    padding-top: 0px;
+    background-color: #f2f2f7;
+    height: 100%;
+    overflow: scroll;
+    padding-bottom: 200px;
+}
+.row-order {
+    border: 1px solid lightgray;
+    background-color: white;
+    margin: 8px 10px 8px 10px;
+    border-radius: 10px;
+    padding: 10px;
+}
+.row-order:hover {
+    border: 1px solid rgb(0, 122, 255);
+    background-color: rgb(235, 235, 235);
+}
+.row-order p {
+    margin: 0px;
+    padding: 0px;
+}
+#order-company {
+    font-weight: 700;
+    font-size: 12px;
+}
+#order-jobsite {
+    font-weight: 500;
+    font-size: 12px;
+}
+#order-date {
+    font-weight: 300;
+    font-size: 12px;
+}
+
+.order-elements {
+    display: none;
+    position: fixed;
+    left: 50%; bottom: 0px;
+    transform: translate(-50%);
+    height: 80%;
+    width: 99%;
+    background-color: white;
+    border-radius: 20px;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    animation-name: hours;
+    animation-duration: 0.2s;
+    z-index: 997;
+}
+#subheading {
+    color: gray;
+    margin-left: 20px;
+}
+.elementsTable {
+    width: 100%;
+    height: 100%;
+}
+.elementsTable iframe {
+    width: 100%;
+    height: 100%;
+    margin-top: 20px;
+    border: none;
+}
+#overlay2 {
+    position: fixed; 
+    display: none; 
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.2); 
+    z-index: 2; 
+    cursor: pointer;
+}
+
+/*   ======================   TRUCKS SCREEN STYLES BEGIN HERE    ====================== */
+#truckScreen {
+    display: none;
+    padding-top: 0px;
+    background-color: #f2f2f7;
+    height: 100%;
+    overflow-y: auto;
+    padding-bottom: 200px;
+}
+.truckList {
+    /* padding:10px; */
+    /* border: 1px solid black; */
+    display: block;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+.cell-truckList {
+    border: 1px solid lightgray;
+    background-color: white;
+    margin: 8px 10px 8px 10px;
+    border-radius: 10px;
+    padding: 10px;
+    display: grid;
+    grid-template-columns: 15px auto 100px;
+}
+.cell-truckList p {
+    margin: 0;
+    padding: 0;
+}
+.st-shipping {
+    display: block;
+    height: 10px;
+    width: 10px;
+    background-color: rgb(32, 193, 32);
+    border-radius: 50%;
+    margin-top: 100%;
+}
+.st-return {
+    display: block;
+    height: 10px;
+    width: 10px;
+    background-color: orange;
+    border-radius: 50%;
+    margin-top: 100%;
+}
+#truck-company {
+    margin-left: 10px;
+    font-weight: 700;
+    font-size: 14px;
+}
+#truck-jobsite {
+    margin-left: 10px;
+    font-weight: 400;
+    font-size: 14px;
+}
+#truck-status {
+    font-weight: 400;
+    font-size: 12px;
+}
+#truck-dateTime {
+    font-weight: 400;
+    color: gray;
+    font-size: 14px;
+    text-align: right;
+}
+
+.truckImages-popup{
+    display: none;
+    position: fixed;
+    left: 50%; bottom: 0px;
+    transform: translate(-50%);
+    height: 480px;
+    width: 99%;
+    background-color: white;
+    border-radius: 20px;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    animation-name: hours;
+    animation-duration: 0.2s;
+    z-index: 997;
+    padding-top: 20px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+.truckImages-popup iframe {
+    width: 100%;
+    height: 100%;
+}
+
+#overlay3 {
+    position: fixed; 
+    display: none; 
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.2); 
+    z-index: 2; 
+    cursor: pointer;
+}
+.newTruck-popup {
+    display: none;
+    position: fixed;
+    left: 50%; bottom: 0px;
+    transform: translate(-50%);
+    height: 600px;
+    width: 99%;
+    background-color: white;
+    border-radius: 20px;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    animation-name: hours;
+    animation-duration: 0.2s;
+    z-index: 997;
+    padding-top: 20px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+.newTruck-popup h1 {
+    font-size: 35px;
+    font-weight: bold;
+    color: gray;
+}
+.newTruck-popup iframe {
+    width: 100%;
+    height: 100%;
+}
+
+.title button {
+    display: block;
+    -webkit-appearance: none;
+    background-color: transparent;
+    border: none;
+    font-size: 40px;
+    margin-top: -20px;
+    margin-right: 10px;
+}
+.title button:hover{
+    color: lightgray;
+}
+
+
+/*  ======================  DAMAGES SCREEN STYLES  ====================== */
+.damagesScreen {
+    display: none;
+    padding-top: 0px;
+    background-color: #f2f2f7;
+    height: 100%;
+    overflow: scroll;
+    padding-bottom: 200px;
+}
+.plusBtn { color: rgb(0, 122, 255) !important; }
+
+.damageList {
+    /* padding:10px; */
+    /* border: 1px solid black; */
+    display: block;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+.cell-damagesList p {
+    margin: 0;
+    padding: 0;
+}
+
+.cell-damagesList {
+    border: 1px solid lightgray;
+    background-color: white;
+    margin: 8px 10px 8px 10px;
+    border-radius: 10px;
+    padding: 10px;
+    display: grid;
+    grid-template-columns: auto 100px;
+}
+
+#damage-company {
+    margin-left: 10px;
+    font-weight: 700;
+    font-size: 14px;
+}
+#damage-jobsite {
+    margin-left: 10px;
+    font-weight: 400;
+    font-size: 14px;
+}
+
+#damage-dateTime {
+    font-weight: 400;
+    color: gray;
+    font-size: 14px;
+    text-align: right;
+}
+
+.damageImages-popup{
+    display: none;
+    position: fixed;
+    left: 50%; bottom: 0px;
+    transform: translate(-50%);
+    height: 80%;
+    width: 99%;
+    background-color: white;
+    border-radius: 20px;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    animation-name: hours;
+    animation-duration: 0.2s;
+    z-index: 997;
+    padding-top: 20px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+.damageImages-popup iframe {
+    width: 100%;
+    height: 100%;
+}
+
+#overlay4 {
+    position: fixed; 
+    display: none; 
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.2); 
+    z-index: 2; 
+    cursor: pointer;
+}
+
+
+.newDamage-popup {
+    display: none;
+    position: fixed;
+    left: 50%; bottom: 0px;
+    transform: translate(-50%);
+    height: 600px;
+    width: 99%;
+    background-color: white;
+    border-radius: 20px;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    animation-name: hours;
+    animation-duration: 0.2s;
+    z-index: 997;
+    padding-top: 20px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+.newDamage-popup h1 {
+    font-size: 35px;
+    font-weight: bold;
+    color: gray;
+}
+.newDamage-popup iframe {
+    width: 100%;
+    height: 100%;
+}
+
+
+
+/* ======================  PROFILE SCREEN STYLES BEGIN HERE     ====================== */
+#profileScreen {
+    display: none;
+    padding-top: 0px;
+    background-color: #f2f2f7;
+    height: 100%;
+    overflow-y: auto;
+    padding-bottom: 200px;
+}
+
+.title i {
+    /* color: gray; */
+    font-size: 40px;
+    margin-top: 10px;
+    margin-right: 25px;
+    text-align: right;
+}
+#profileIcon {
+    color: gray;
+}
+
+.passwordScreen {
+   display: none;
+}
+.passwordScreen .topButtons {
+    margin-bottom: 40px;
+}
+.form{
+    display: block;
+    /* margin-top: 60px; */
+    background-color: white;
+    border-radius: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    width: 95%;
+    margin: auto;
+}
+.row-form {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    border-bottom: 1px solid lightgray;
+    height: 45px;
+    line-height: 40px;
+}
+.pw-check {
+    display: grid;
+    grid-template-columns: auto 20px;
+    line-height: 40px;
+}
+.check {
+    margin-top: 2px;
+    display: none;
+    font-size: 20px;
+}
+#check-current{ color: rgb(0, 122, 255);}
+#check-new{ color: rgb(0, 122, 255);}
+#check-confirm{ color: rgb(0, 122, 255);}
+.passwordScreen input {
+    display: block;
+    width: 90%;
+    margin: auto;
+    height: 40px;
+    margin-bottom: 15px;
+    color:gray;
+    border-radius: 10px;
+    padding-left: 10px;
+    border: none;
+    text-align: center;
+    outline: none;
+    background-color: transparent;
+    text-align: right;
+}
+.btn-UpdatePassword {
+    -webkit-appearance: none;
+    display: block;
+    width: 95%;
+    margin: auto;
+    height: 50px !important;
+    margin-top: 30px;
+    background-color: rgb(0, 122, 255);
+    border-radius: 10px;
+    color: white !important;
+    text-align: center;
+    border: none;
+}
+
+
+.profile-section{
+    display: block;
+    width: 95%;
+    margin:auto;
+    padding: 10px;
+    box-sizing: border-box;
+    background-color: white;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    padding-top: 10px;
+}
+.element-details {
+    display: grid;
+    grid-template-columns: auto auto;
+    font-size: 18px;
+    border-bottom: 1px solid lightgray;
+    width: 98%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+}
+.element-details p {
+    margin: 0;
+    padding: 0;
+}
+
+.detail-desc {
+    text-align: left;
+    color: black;
+    padding-left: 10px !important;
+}
+.detail-info {
+    text-align: right;
+    color: gray;
+    padding-right: 10px !important;
+}
+
+.detail-info button {
+    -webkit-appearance: none;
+    background-color: transparent;
+    border: none;
+    color: gray;
+    text-align: right;
+}
+#last {
+    border-bottom: none;
+    margin-bottom: 0px;
+    padding-bottom: 0px;
+}
+
+.profile-main {
+    display: block;
+}
+.payrolls {
+    display: none;
+}
+.workedHours {
+    display: none;
+}
+.topButtons{
+    display: grid;
+    grid-template-columns: 20% auto 20%;   
+    width: 95%;
+    height: 40px;
+    line-height: 40px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.topButtons p {
+    font-size: 18px;
+    font-weight: 600;
+    text-align: center;
+}
+.top-buttons {
+    -webkit-appearance: none;
+    background-color: transparent;
+    color: rgb(0, 122, 255);
+    /* font-size: 20px; */
+    height: 40px;
+    border: none;
+}
+#btnBack {
+    text-align: left;
+    font-size: 18px;
+}
+#btnReload {
+    text-align: right;
+    font-size: 25px;
+}
+.filter {
+
+}
+.filter-workedHours {
+    display: grid;
+    grid-template-columns: 43% 43% auto;
+    margin: auto;
+    width: 100%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid lightgray;
+}
+.filter-workedHours input {
+    width: 90%;
+    height: 40px;
+    text-align: center;
+    background-color: white;
+    display: block;
+    margin:auto;
+    line-height: 40px;
+}
+input[type='date']:after {
+    color: #aaa;
+    content: attr(placeholder);
+  }
+  
+.filter-workedHours button {
+    -webkit-appearance: none;
+    text-align: center;
+    font-size: 20px;
+    height: 40px;
+    background-color: transparent;
+    border: none;
+    margin-top: 0px;
+}
+
+.filteredHoursTable {
+    width: 100%;
+    height: 100vh;
+}
+.filteredHoursTable iframe{
+    width: 100%;
+    height: 100%;
+    overflow-y: scroll;
+}
+
+.payrollScreen {
+    padding-top: 65px;
+    background-color: #f2f2f7;
+    display: block;
+    height: 100%;
+    overflow-y: auto;
+}
+
+.wrapper {
+    text-align: center;
+    justify-content: center;
+    display: block;
+    margin-top: 30px;
+}
+.list {
+    padding: 3px;
+    display: block; 
+    width: 95%;
+    margin-left: auto;
+    margin-right: auto;
+}
+#row-payrolls {
+    display: block !important; 
+    text-align: center;
+}
+.preElement {
+    display: grid;
+    grid-template-columns: auto 60px;
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+    border-radius: 5px;
+    text-align: left;
+    font-size: 20px;
+    padding-left: 20px;
+    margin-bottom: 3px;
+    margin-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    height: 50px;
+    line-height: 50px;
+    color: gray;
+    font-weight: 300;
+    font-size: 15px;
+}
+
+.btn-show {
+   text-align: center;
+   display: block;
+}
+.btn-hide {
+    text-align: center;
+    display: none;
+}
+.element {
+    display: none;
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    margin-bottom: 15px;
+    text-align: left;
+    font-size: 20px;
+    padding-top: 20px;
+    padding-left: 20px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.element p {
+    margin-bottom: 8px;
+    color: rgb(65, 65, 65);
+}
+.element i {
+    color: gray;
+    margin-right: 3px;
+    margin-left: 10px;
+}
+.element a {
+    display: block;
+    height: 40px;
+    color: white !important;
+    text-align: center;
+    line-height: 40px;
+    background-color: rgb(0, 122, 255);
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    margin-top: 20px;
+    margin-left: -20px;
+}
+#overlay {
+    position: fixed; /* Sit on top of the page content */
+    display: none; /* Hidden by default */
+    width: 100%; /* Full width (cover the whole page) */
+    height: 100%; /* Full height (cover the whole page) */
+    top: 50;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.2); /* Black background with opacity */
+    z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
+    cursor: pointer; /* Add a pointer on hover */
+}
+.hours {
+    display: none;
+    position: fixed;
+    height: 80%;
+    width: 98%;
+    bottom: 0px;
+    left: 50%;
+    transform: translate(-50%);
+    background-color: white;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    z-index: 999;
+    padding: 10px;
+    animation-name: hours;
+    animation-duration: 0.2s;
+}
+
+
+@keyframes hours {
+    0%   {bottom:-500px;}
+    5%   {bottom:-475px;}
+   10%   {bottom:-450px;}
+   15%   {bottom:-425px;}
+   20%   {bottom:-400px;}
+   25%   {bottom:-375px;}
+   30%   {bottom:-350px;}
+   35%   {bottom:-325px;}
+   40%   {bottom:-300px;}
+   45%   {bottom:-275px;}
+   50%   {bottom:-250px;}
+   55%   {bottom:-225px;}
+   60%   {bottom:-200px;}
+   65%   {bottom:-175px;}
+   70%   {bottom:-150px;}
+   75%   {bottom:-125px;}
+   80%   {bottom:-100px;}
+   85%   {bottom:-75px;}
+   90%   {bottom:-50px;}
+   95%   {bottom:-25px;}
+  100%   {bottom:-0px;}
+ }
+
+
+.hours h1 {
+    color: gray;
+    text-align: left;
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-bottom: 10px;
+    font-weight: bold;
+    font-size: 30px;
+}
+
+.hours .hoursTable{
+    margin-top: 10px;
+    position: absolute;
+    width: 90%;
+    left: 50%;
+    transform: translate(-50%);
+    height: 100vh;
+    overflow-y: auto;
+}
+.hours iframe {
+    border: none;
+    margin-top: 5px;
+    width: 100%;
+    height: 100%;
+    z-index: 999;
+}
+
+#hoursDates, #totHours {
+    text-align: left;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    margin-left: 10px;
+    font-size: 15px;
+    color: gray;
+}
+
+
+.content {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+}
+
+.row {
+    display: grid;
+    grid-template-columns: 20% 20% 20% 20% 20%;
+    text-align: center;
+    border-bottom:1px solid lightgray;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    color:gray;
+    margin-left: auto;
+    margin-right: auto;
+    width: 98%;
+}
+
+#bottomBar {
+    position: fixed;
+    bottom: 0px; left: 0px;
+    width: 100%;
+    height: 68px;
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 30px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%; 
+    text-align: center;
+}
+#bottomBar p {
+    font-size: 10px;
+}
+.btn-bar i {
+    font-size: 25px;
+    color: gray;
+}
+#iconOrder {
+    color: rgb(0, 122, 255);
+}
+
+
