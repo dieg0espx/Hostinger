@@ -1,0 +1,192 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-appearance: none;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+body {
+    padding: 10px;
+    background-color: rgb(248, 245, 245);
+}
+.title  {
+    padding: 20px;
+    font-size: 20px;
+}
+.wrapper {
+    /* border: 1px solid black; */
+    /* padding: 5px; */
+    text-align: center;
+    justify-content: center;
+    display: block;
+}
+.list {
+    padding: 3px;
+    display: block; 
+    width: 95%;
+    margin-left: auto;
+    margin-right: auto;
+}
+.preElement {
+    display: grid;
+    grid-template-columns: auto 60px;
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+    border-radius: 5px;
+    text-align: left;
+    font-size: 20px;
+    padding-left: 20px;
+    margin-bottom: 3px;
+    margin-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    height: 50px;
+    line-height: 50px;
+    color: gray;
+    font-weight: 300;
+    font-size: 15px;
+}
+
+.btn-show {
+   text-align: center;
+   display: block;
+}
+.btn-hide {
+    text-align: center;
+    display: none;
+}
+.element {
+    display: none;
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    margin-bottom: 15px;
+    text-align: left;
+    font-size: 20px;
+    padding-top: 20px;
+    padding-left: 20px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.element p {
+    margin-bottom: 8px;
+    color: rgb(65, 65, 65);
+}
+.element i {
+    color: gray;
+    margin-right: 3px;
+    margin-left: 10px;
+}
+.element a {
+    display: block;
+    height: 40px;
+    color:white;
+    text-align: center;
+    line-height: 40px;
+    background-color: rgb(0, 122, 255);
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    margin-top: 20px;
+    margin-left: -20px;
+}
+#overlay {
+    position: fixed; /* Sit on top of the page content */
+    display: none; /* Hidden by default */
+    width: 100%; /* Full width (cover the whole page) */
+    height: 100%; /* Full height (cover the whole page) */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.2); /* Black background with opacity */
+    z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
+    cursor: pointer; /* Add a pointer on hover */
+}
+.hours {
+    display: none;
+    position: fixed;
+    height: 500px;
+    width: 98%;
+    bottom: 0px;
+    left: 50%;
+    transform: translate(-50%);
+    background-color: white;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    z-index: 999;
+    padding: 10px;
+
+    animation-name: hours;
+    animation-duration: 0.25s;
+}
+
+
+@keyframes hours {
+    0%   {bottom:-500px;}
+    5%   {bottom:-475px;}
+   10%   {bottom:-450px;}
+   15%   {bottom:-425px;}
+   20%   {bottom:-400px;}
+   25%   {bottom:-375px;}
+   30%   {bottom:-350px;}
+   35%   {bottom:-325px;}
+   40%   {bottom:-300px;}
+   45%   {bottom:-275px;}
+   50%   {bottom:-250px;}
+   55%   {bottom:-225px;}
+   60%   {bottom:-200px;}
+   65%   {bottom:-175px;}
+   70%   {bottom:-150px;}
+   75%   {bottom:-125px;}
+   80%   {bottom:-100px;}
+   85%   {bottom:-75px;}
+   90%   {bottom:-50px;}
+   95%   {bottom:-25px;}
+  100%   {bottom:-0px;}
+ }
+
+
+.hours h1 {
+    color: gray;
+    text-align: center;
+    margin-top: 15px;
+    margin-bottom: 10px;
+}
+
+.hours .hoursTable{
+    margin-top: 10px;
+    position: absolute;
+    width: 90%;
+    left: 50%;
+    transform: translate(-50%);
+    height: 400px;
+    overflow-y: auto;
+}
+.hours iframe {
+    border: none;
+    margin-top: 10px;
+    width: 100%;
+    height: 390px;
+}
+
+
+
+.content {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+}
+
+.row {
+    display: grid;
+    grid-template-columns: 20% 20% 20% 20% 20%;
+    text-align: center;
+    border-bottom:1px solid lightgray;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    color:gray;
+}
